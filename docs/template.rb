@@ -1,4 +1,4 @@
-gem 'juice', path: '~/sandbox/weblemonade/juice' #git: 'git://github.com/weblemonade/juice.git'
+gem 'juice', git: 'git://github.com/weblemonade/juice.git'
 
 # data
 gem 'pg'
@@ -61,4 +61,5 @@ gem_group :test do
   gem 'simplecov-rcov', :require => false
 end
 
+bundle install
 generate "juice:install"
