@@ -1,0 +1,55 @@
+doctype 5
+html lang="en"
+  head
+    meta charset="utf-8"
+    title = doctitle
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    meta name="description" content="description"
+    = stylesheet_link_tag :application, media: "all", "data-turbolinks-track" => true
+    = yield :css
+    = javascript_include_tag :application, "data-turbolinks-track" => true
+    = csrf_meta_tags
+    |
+      <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+    = yield :head
+
+  body
+    
+    = render partial: user_signed_in? ? 'layouts/nav_authenticated' : 'layouts/nav_unauthenticated'
+
+    .content
+      - if @page_title && @page_title.length > 0 && !@hide_page_title
+        .page-title
+          .outer
+            .container
+              .inner
+                .row
+                  .col-md-8
+                    h1
+                      = @page_title
+                      |&nbsp;
+                      - if @subtitle
+                        small = @subtitle
+
+                  .col-md-4
+                    .pull-right = image_tag 'logo.jpg'
+
+
+      .page-actions
+        .outer
+          .container
+            .inner
+              = yield :page_actions
+
+      .page-body
+        .outer
+          .container
+            .inner
+              == flash_helper
+              = yield
+
+    = render partial: 'layouts/footer'
+
+    = yield :javascript

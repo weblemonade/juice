@@ -1,0 +1,8 @@
+- title "Editing <%= singular_table_name.titleize %>"
+
+- content_for :page_actions do
+  = link_to "Back", <%= singular_table_name %>_path, class: "btn btn-default"
+  | &nbsp;
+  = link_to "Delete", <%= singular_table_name %>_path(@<%= singular_table_name %>), confirm: 'Are you sure? This action cannot be undone.', method: :delete, class: "btn btn-danger"
+
+== render partial: "form"

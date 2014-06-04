@@ -1,0 +1,14 @@
+- <%= table_name %> ||= @<%= table_name %>
+
+table.table
+  thead
+    tr
+<%- attributes.each do |attribute| -%>
+      th <%= attribute.name.titleize %>
+<%- end -%>
+  tbody
+    - @<%= table_name %>.each do |<%= singular_table_name %>|
+      tr
+<%- attributes.each do |attribute| -%>
+        td = <%= singular_table_name %>.<%= attribute.name %>
+<%- end -%>

@@ -1,0 +1,25 @@
+.navbar.navbar-default.navbar-fixed-top role="navigation" 
+  .container
+    .navbar-header
+      button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to brand_name, root_path, :class => "navbar-brand"
+
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li = link_to "Home", "#"
+        li = link_to "Reports", "#"
+
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle data-toggle="dropdown" href="#" 
+            | Settings
+            b.caret
+          ul.dropdown-menu
+            li = link_to "Preferences", "#"
+            li = link_to "Account", "#"
+            li.divider
+            li = link_to fa_icon("sign-off", text: "Logout"), destroy_user_session_path, :method => :delete

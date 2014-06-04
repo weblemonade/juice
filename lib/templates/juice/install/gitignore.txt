@@ -1,0 +1,58 @@
+# Ignore bundler config
+/.bundle
+
+# bundle install --path vendor
+/vendor/ruby/
+
+# as a policy we do not commit vendored gems
+# rubygems.org is stable and we can always download them again
+/vendor/cache/
+
+# tests
+/.rspec
+/coverage/
+
+# rails asset pipeline
+/public/assets/
+# i18n-js generates files here
+/app/assets/javascripts/i18n/
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite
+
+# Ignore all logfiles and tempfiles.
+log/*.log
+/tmp
+/public/system
+/coverage
+config/database.yml
+config/initializers/env_config.rb
+config/config.yml
+config/newrelic.yml
+
+# set ruby version
+.rvmrc
+.ruby-version
+.ruby-gemset
+.powrc
+.rbenv-vars
+
+## temporary files. editor and OS
+# For MacOS:
+.DS_Store
+
+# For TextMate
+*.tmproj
+tmtags
+
+# For emacs:
+*~
+\#*
+.\#*
+
+# For vim:
+*.swp
+
+# for rubymine IDE
+.idea/
