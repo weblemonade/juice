@@ -25,22 +25,16 @@ html lang="en"
           .outer
             .container
               .inner
-                .row
-                  .col-md-8
-                    h1
-                      = @page_title
-                      |&nbsp;
-                      - if @subtitle
-                        small = @subtitle
-
-                  .col-md-4
-                    .pull-right = image_tag 'logo.jpg'
-
+                h1
+                  = @page_title
+                  |&nbsp;
+                  - if @subtitle
+                    small = @subtitle
 
       .page-actions
         .outer
           .container
-            .inner
+            .inner.text-right
               = yield :page_actions
 
       .page-body
