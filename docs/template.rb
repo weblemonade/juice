@@ -22,7 +22,7 @@ gem 'country_select'
 # gem 'simple_form'
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
 gem 'show_for'
-gem 'kaminari'
+gem 'will_paginate-bootstrap'
 gem 'paperclip'
 
 gem 'bitmask_attributes', git: 'git://github.com/jigfox/bitmask_attributes.git', :branch => 'rails4'
@@ -61,5 +61,6 @@ gem_group :test do
   gem 'simplecov-rcov', :require => false
 end
 
-bundle install
+run 'bundle install'
+
 generate "juice:install"
