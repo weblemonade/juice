@@ -61,5 +61,5 @@ gem_group :test do
   gem 'simplecov-rcov', :require => false
 end
 
-bundle install
+run 'bundle install'
 generate "juice:install"
