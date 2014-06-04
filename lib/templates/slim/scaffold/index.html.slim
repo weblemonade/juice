@@ -29,4 +29,4 @@ table.table
               li.divider
               li = link_to "Delete", <%= singular_table_name %>_path(<%= singular_table_name %>), confirm: 'Are you sure? This action cannot be undone.', method: :delete
 
-= will_paginate "<%= @table_name %>", renderer: BootstrapPagination::Rails
+= will_paginate @<%= table_name %>, renderer: BootstrapPagination::Rails
