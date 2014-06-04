@@ -9,6 +9,7 @@ module Juice
         copy_file "home_controller.rb", "app/controllers/home_controller.rb"
         copy_file "index.html.slim", "app/views/home/index.html.slim"
         copy_file "application.html.slim", "app/views/layouts/application.html.slim"
+        copy_file "layout_helperrb", "app/helpers/layout_helper.rb"
         copy_file "footer.html.slim", "app/views/layouts/_footer.html.slim"
         copy_file "nav_unauthenticated.html.slim", "app/views/layouts/_nav_unauthenticated.html.slim"
         copy_file "nav_authenticated.html.slim", "app/views/layouts/_nav_authenticated.html.slim"
