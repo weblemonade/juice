@@ -7,6 +7,11 @@ The inherited_resources gem used in conjunction with can_can and strong paramete
   before_filter :authenticate_user!
   load_and_authorize_resource
 
+  protected
+  def collection
+    @company ||= end_of_association_chain.paginate(:page => params[:page])
+  end
+
   private
   def permitted_params
     params.permit company: %i(first_name last_name email phone)
