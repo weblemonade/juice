@@ -6,10 +6,11 @@ module Juice
         remove_file "public/index.html"
         remove_file "app/assets/images/rails.png"
         remove_file "app/views/layouts/application.html.erb"
+        # copy_file "initializer.rb", "config/initializers/juice.rb"
         copy_file "home_controller.rb", "app/controllers/home_controller.rb"
         copy_file "index.html.slim", "app/views/home/index.html.slim"
         copy_file "application.html.slim", "app/views/layouts/application.html.slim"
-        copy_file "layout_helperrb", "app/helpers/layout_helper.rb"
+        copy_file "layout_helper.rb", "app/helpers/layout_helper.rb"
         copy_file "footer.html.slim", "app/views/layouts/_footer.html.slim"
         copy_file "nav_unauthenticated.html.slim", "app/views/layouts/_nav_unauthenticated.html.slim"
         copy_file "nav_authenticated.html.slim", "app/views/layouts/_nav_authenticated.html.slim"
@@ -28,7 +29,7 @@ module Juice
       end
 
       def setup_unicorn
-        copy_file 'unicorn.rb', 'config/unicorn/development.rb'
+        # copy_file 'unicorn.rb', 'config/unicorn/development.rb'
         copy_file 'unicorn.rb', 'config/unicorn/staging.rb'
         copy_file 'unicorn.rb', 'config/unicorn/production.rb'
       end

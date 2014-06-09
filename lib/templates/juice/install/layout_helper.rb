@@ -24,10 +24,10 @@ module LayoutHelper
     flash.collect{|k,msg|
       case k
       when :notice then alert_class = "success auto-dismiss"
-      when :alert then alert_class = "error"
+      when :alert then alert_class = "warning"
       else alert_class = k.to_s
       end
-      content_tag(:div, msg, :id => "flash-#{alert_class}", :class => "alert alert-#{alert_class}").html_safe
+      content_tag(:div, msg, :id => "flash-#{alert_class}", :class => "bg-#{alert_class}").html_safe
     }.compact.join
   end
 end

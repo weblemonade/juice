@@ -29,12 +29,10 @@ bindPlugins = (context) ->
     return
   ), 3000
 
-  $(".fancybox", context).fancybox()
-
   $(".select2", context).select2()
 
-  $(".datefield", context).datepicker(format: "yyyy-mm-dd").on "changeDate", ->
-    $(this).blur()
-    return
+  # $(".datefield", context).datepicker(format: "yyyy-mm-dd").on "changeDate", ->
+  #   $(this).blur()
+  #   return
 
   return
