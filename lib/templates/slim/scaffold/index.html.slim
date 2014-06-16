@@ -12,7 +12,7 @@ table.table
       th.col-md-2
   tbody
     - @<%= table_name %>.each do |<%= singular_table_name %>|
-      tr data-clickable="<%= singular_table_name_url %>(<%= singular_table_name %>)"
+      tr data-clickable="<%= singular_table_name %>_url(<%= singular_table_name %>)"
 <%- attributes.each do |attribute| -%>
         td = <%= singular_table_name %>.<%= attribute.name %>
 <%- end -%>
