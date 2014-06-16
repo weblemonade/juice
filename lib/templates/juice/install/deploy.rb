@@ -9,7 +9,7 @@ set :port, "22"
 set :user, 'deploy'
 set :app_name, 'app-name'
 
-set :deploy_to, '/var/www/#{app_name}'
+set :deploy_to, "/var/www/#{app_name}"
 set :app_path,   "#{deploy_to}/#{current_path}"
 set :repository, 'git@github.com:weblemonade/#{app_name}.git'
 set :branch, 'master'
