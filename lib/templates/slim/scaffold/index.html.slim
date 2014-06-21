@@ -6,19 +6,15 @@
 table.table
   thead
     tr
+      th.col-sm-1 Action
 <%- attributes.each do |attribute| -%>
       th <%= attribute.name.titleize %>
 <%- end -%>
-      th.col-md-2
   tbody
     - @<%= table_name %>.each do |<%= singular_table_name %>|
-      tr data-clickable="<%= singular_table_name %>_url(<%= singular_table_name %>)"
-<%- attributes.each do |attribute| -%>
-        td = <%= singular_table_name %>.<%= attribute.name %>
-<%- end -%>
-        td.col-md-2.text-right
-
-          .btn-group.btn-group-sm
+      tr data-clickable="#{<%= singular_table_name %>_url(<%= singular_table_name %>)}"
+        td.col-sm-1
+          .btn-group.btn-group-xs
             = link_to "View", <%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-default'
             button.btn.btn-default.dropdown-toggle data-toggle="dropdown" type="button" 
               span.caret
@@ -28,5 +24,8 @@ table.table
               li = link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
               li.divider
               li = link_to "Delete", <%= singular_table_name %>_path(<%= singular_table_name %>), confirm: 'Are you sure? This action cannot be undone.', method: :delete
+<%- attributes.each do |attribute| -%>
+        td = <%= singular_table_name %>.<%= attribute.name %>
+<%- end -%>
 
 = will_paginate @<%= table_name %>, renderer: BootstrapPagination::Rails

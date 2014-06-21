@@ -1,7 +1,7 @@
 - title "<%= singular_table_name.titleize %>"
 
 - content_for :page_actions do
-  = link_to "Back", <%= plural_table_name %>_path, class: "btn btn-default"
+  = link_to "List", <%= plural_table_name %>_path, class: "btn btn-default"
   | &nbsp;
   = link_to "Edit <%= singular_table_name %>", edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: "btn btn-primary"
 
