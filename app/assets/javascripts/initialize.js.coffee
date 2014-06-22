@@ -10,18 +10,16 @@ $ ->
 # dynamically added to the page eg:  bindPlugins('#new-element');
 
 bindPlugins = (context) ->
-  console.log "binding standard plugins"
+  # console.log "binding standard plugins"
   
   # ignore tab key inside textareas
   $("textarea", context).keydown (e) ->
     false  if e.which is 9
 
-  
   # make non a tags clickable if they have a data-url
   $(".clickable", context).click (e) ->
-    window.location = $(this).data("url")  if $(this).data("url")
+    window.location = $(this).data("url") if $(this).data("url")
     return
-
   
   # hide an element automatically
   setTimeout (->
