@@ -2,6 +2,18 @@ module Juice
   module Generators
     class InstallGenerator < Rails::Generators::Base
 
+      # simple form complains on every method if it's not installed... so... lets do this first
+      def install_simple_form
+        generate "simple_form"
+        copy_file 'simple_form_bootstrap.rb', 'config/initializers/simple_form_bootstrap.rb'
+        # use juice form partial instead
+        remove_file "lib/templates/slim/scaffold/_form.html.erb"
+      end
+
+      def install_rspec
+        generate "rspec:install"
+      end
+
       def cleanup_default_files
         remove_file "public/index.html"
         remove_file "app/assets/images/rails.png"
@@ -53,18 +65,15 @@ module Juice
         generate "cancan:install"
       end
 
-      def setup_simple_form
-        generate "simple_form"
-        copy_file 'simple_form_bootstrap.rb', 'config/initializers/simple_form_bootstrap.rb'
-        # use juice form partial instead
-        remove_file "lib/templates/slim/scaffold/_form.html.erb"
-      end
-
       def setup_git
         remove_file ".gitignore"
         copy_file 'gitignore.txt', '.gitignore'
       end
 
+      def setup_sample_api
+        directory 'api', 'app/api'
+      end
+      
     end
   end
 end
