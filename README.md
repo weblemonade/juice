@@ -1,29 +1,15 @@
 # Juice
 
-TODO: Write a gem description
+Create a new application with the following template
 
-## Installation
+```bash
+rails new my_app -m 'https://gist.githubusercontent.com/kagedwolf/d2db48e42d3760f90942/raw/juice-app-template'
+```
 
-Add this line to your application's Gemfile:
+This will give you a generic application including
 
-    gem 'juice'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install juice
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+- plain twitter bootstrap layout
+- font-awesome icons
+- devise authentication
+- role base permissions using cancan
+- ui helper such as action_buttons

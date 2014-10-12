@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "juice"
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.3'
   spec.authors       = ["Kevin Wolff"]
   spec.email         = ["kevin.wolff@weblemonade.com"]
   spec.description   = %q{A rails engine for scaffolding, ui helpers, etc.}
@@ -34,14 +34,17 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'devise'
 
   # dry efficient code
-  spec.add_dependency 'inherited_resources'
+  # spec.add_dependency 'inherited_resources'
   spec.add_dependency 'slim-rails'
 
   # ui
   spec.add_dependency 'bootstrap-sass', '~> 3.0.3.0'
   spec.add_dependency 'font-awesome-rails'
-  spec.add_dependency 'simple_form', '~> 3.1.0.rc1'#, github: 'plataformatec/simple_form'
+  spec.add_dependency 'simple_form'
   # spec.add_dependency 'show_for'
   spec.add_dependency 'will_paginate-bootstrap'
   spec.add_dependency 'paperclip'
+
+  spec.add_dependency 'smart_listing'
+
 end

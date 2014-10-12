@@ -35,8 +35,8 @@ module Juice
         insert_into_file "app/assets/javascripts/application.js", :after => "jquery_ujs\n" do
           "//= require bootstrap\n//= require initialize\n//= require forms\n"
         end
-        insert_into_file "app/assets/stylesheets/application.css", :after => "*= require_tree .\n" do
-          " *= require 'bootstrap'\n *= require 'font-awesome'\n"
+        insert_into_file "app/assets/stylesheets/application.css", :before => " *= require_tree ." do
+          "\n *= require 'bootstrap'\n *= require 'font-awesome'\n"
         end
       end
 

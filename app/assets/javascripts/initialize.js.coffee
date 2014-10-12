@@ -18,6 +18,7 @@ bindPlugins = (context) ->
 
   # make non a tags clickable if they have a data-url
   $(".clickable", context).click (e) ->
+    console.log $(this).data("url")
     window.location = $(this).data("url") if $(this).data("url")
     return
   
