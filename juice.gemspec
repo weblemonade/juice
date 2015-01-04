@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
 
   # environment
-  spec.add_dependency "rails", "~> 4.1.0"
+  spec.add_dependency "rails", ">= 4.1"
 
   # database
   # gem 'sqlite3', group: [:development, :test]
